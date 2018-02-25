@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python2
 import os
 import sys
 
@@ -6,15 +6,15 @@ import pandas as pd
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Please specify the data dir.")
+        print "Please specify the data dir."
         exit()
     DATA_DIR = sys.argv[1]
     if not os.path.isdir(DATA_DIR):
-        print("Path %s is not a valid directory" % DATA_DIR)
+        print "Path %s is not a valid directory" % DATA_DIR
         exit()
     DATA_FILE = DATA_DIR.rstrip('/') + '/' + 'cities15000.txt'
     if not os.path.exists(DATA_FILE):
-        print("Data file %s doesn't exist." % DATA_FILE)
+        print "Data file %s doesn't exist." % DATA_FILE
         exit()
 
     # See http://download.geonames.org/export/dump/readme.txt for descriptions of the data fields.
@@ -54,5 +54,5 @@ if __name__ == "__main__":
         'geonameid', 'name', 'asciiname', 'alternatenames', 'latitude',
         'longitude', 'country code', 'admin1 code', 'admin2 code',
         'population', 'elevation', 'timezone']]
-    print("Data size:", city_data.shape)
-    print(city_data[city_data['asciiname'] == 'New York City'])
+    print "Data size:", city_data.shape
+    print city_data[city_data['asciiname'] == 'New York City']
