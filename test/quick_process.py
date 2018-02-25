@@ -50,6 +50,7 @@ if __name__ == "__main__":
         'modification date',  # date of last modification in yyyy-MM-dd format
     ]
     city_data = pd.read_csv(DATA_FILE, sep='\t', header=None, names=COLUMN_NAMES)
+    # Only keep selected columns.
     city_data = city_data[[
         'geonameid', 'name', 'asciiname', 'alternatenames', 'latitude',
         'longitude', 'country code', 'admin1 code', 'admin2 code',
